@@ -10,7 +10,7 @@ colsum = np.sum(img2,axis = 0)
 rowsum = np.sum(img2,axis = 1)
 
 cent = np.array([np.argmax(rowsum), np.argmax(colsum)])
-print cent   
+print cent
 
 cv2.waitKey(0)
-cv2.destroyAllWindows()
+cv2.destroyAllWindows()  
