@@ -1,16 +1,17 @@
 import numpy as np
 import cv2
-'''
+
 cap = cv2.VideoCapture('ball_test.h264')
 
 while(cap.isOpened()):
     ret, frame = cap.read()
 
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    gray2 = gray[50:480,90:520]
 
-    cv2.imshow('frame',gray)
+    cv2.imshow('frame',gray2)
     if cv2.waitKey(25) & 0xFF == ord('q'):
-        cv2.imwrite('camframe2.jpeg',gray)
+        cv2.imwrite('camframe2.jpeg',gray2)
         break
 
 cap.release()
@@ -31,3 +32,4 @@ print cent
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+'''
