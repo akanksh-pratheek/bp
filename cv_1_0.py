@@ -5,6 +5,7 @@ import cv2
 
 cap = cv2.VideoCapture('ball_test.avi')
 centroid = np.zeros((430,430))
+centarray = np.zeros((2,25))
 
 fcount = 0
 
@@ -17,17 +18,19 @@ while(cap.isOpened()):
         colsum = np.sum(bw,axis = 0)
         rowsum = np.sum(bw,axis = 1)
         cent = np.array([np.argmax(rowsum), np.argmax(colsum)])
-        print cent
+        centarray[0,fcount] = cent[0]
+        centarray[1,fcount] = cent[1]
         centroid[cent[0],cent[1]] = 255
         cv2.imshow('frame',centroid)
         fcount = fcount + 1
 
     else:
         break
-
+print fcount
+print centarray
 cap.release()
 cv2.destroyAllWindows()
-cv2.imwrite('cent.jpeg',centroid)
+#cv2.imwrite('cent.jpeg',centroid)
 
 print("--- %s seconds ---" % (time.time() - start_time))
 
