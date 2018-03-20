@@ -1,0 +1,11 @@
+while(1)
+   % img = snapshot(cam);
+    img = rgb2gray(img);
+    imgnew = imbinarize(img);
+    imshow(imgnew)
+    sumrow = sum(imgnew,2);
+    sumcol = sum(imgnew);
+    [~,x] = max(sumcol);
+    [~,y] = max(sumrow);
+end
+

@@ -2,6 +2,7 @@ import time
 import numpy as np
 import cv2
 
+#192.168.43.140
 cap = cv2.VideoCapture('ball_test.avi')
 #centroid = np.zeros((430,430))
 centarray = np.zeros((2,25))
